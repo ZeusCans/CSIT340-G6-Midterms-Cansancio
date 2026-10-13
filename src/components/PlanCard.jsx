@@ -1,8 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Feature from "./Feature";
 
 export default function PlanCard({ name, price, storage, support, seats, months }) {
-  const total = (price ?? 0) * (seats ?? 1) * (months ?? 1);
+  const total = price * seats * months;
 
   return (
     <div className="overflow-hidden rounded-xl border-2 border-[#000000] bg-[#EEEEEE]">
@@ -10,8 +10,8 @@ export default function PlanCard({ name, price, storage, support, seats, months 
         <h3 className="text-3xl font-bold">{name}</h3>
         <p className="mt-2 text-xl">PHP {price} per seat each month</p>
         <ul className="mt-6 text-xl">
-          <li className="border-t border-[#DDDDDD] py-2">{storage}</li>
-          <li className="border-t border-[#DDDDDD] py-2">{support}</li>
+          <Feature text={storage} />
+          <Feature text={support} />
         </ul>
       </div>
       <p className="bg-[#000000] px-8 py-5 text-3xl font-bold text-[#EEEEEE]">
@@ -20,17 +20,3 @@ export default function PlanCard({ name, price, storage, support, seats, months 
     </div>
   );
 }
-
-PlanCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  storage: PropTypes.string.isRequired,
-  support: PropTypes.string.isRequired,
-  seats: PropTypes.number,
-  months: PropTypes.number,
-};
-
-PlanCard.defaultProps = {
-  seats: 1,
-  months: 1,
-};

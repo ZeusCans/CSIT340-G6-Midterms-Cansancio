@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Summary() {
-  const [seats, setSeats] = useState(1);
-  const [months, setMonths] = useState(1);
-  const [customer, setCustomer] = useState("Cansancio, Zeus B.");
-
+export default function Summary({ seats, months, customer }) {
   return (
     <header>
       <h2 className="text-6xl font-bold">Build your plan</h2>
