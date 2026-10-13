@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between border-b border-[#CB2957] bg-[#000000] px-20 py-6 text-[#EEEEEE]">

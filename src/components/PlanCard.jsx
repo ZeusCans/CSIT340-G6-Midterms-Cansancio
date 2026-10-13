@@ -1,4 +1,3 @@
-import React from "react";
 import Feature from "./Feature";
 
 export default function PlanCard({ name, price, storage, support, seats, months }) {

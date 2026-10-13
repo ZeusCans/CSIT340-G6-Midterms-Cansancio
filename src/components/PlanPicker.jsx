@@ -1,4 +1,3 @@
-import React from "react";
 import Summary from "./Summary";
 
 export default function PlanPicker({ seats, months, onAddSeat, onAddMonth, onReset }) {
